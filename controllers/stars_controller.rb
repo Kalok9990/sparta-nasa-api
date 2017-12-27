@@ -8,65 +8,54 @@ class StarsController < Sinatra::Base
     register Sinatra::Reloader
   end
 
-  $stars = [{
-  	id: 0,
-  	title: "Star 1",
-  	body: "This is the first star",
-    source: "https://i.pinimg.com/736x/da/8e/fc/da8efc68a9eb13b228eee3609962a1a5--cute-dog-costumes-puppy-costume.jpg"
-  },
-  {
-    id: 1,
-    title: "Star 2",
-    body: "This is the second star",
-    source: "https://i.pinimg.com/736x/be/82/15/be821544fc5f328567cb538f96edb49a--snowball-too-cute.jpg"
-  },
-  {
-    id: 2,
-    title: "Star 3",
-    body: "This is the third star",
-    source: "http://vignette4.wikia.nocookie.net/lotrminecraftmod/images/3/32/Cute-Dog-dogs-13286656-1024-768.jpg/revision/latest?cb=20150222011858"
-  }];
-
   get "/" do
-    @title = "Star Homepage"
-    erb :"stars/home"
-  end
-
-  get "/stars" do
     @title = "Stars"
-    @stars = $stars
+    @stars = Star.all
     erb :"stars/index"
   end
 
-  post "/stars" do
+  post "/" do
     "Creates new stars"
+    star = Star.new
+    star.title = params[:title]
+    star.info = params[:info]
+    star.image = params[:image]
+    star.save
+    redirect "/"
   end
 
-  get "/stars/new" do
+  get "/new" do
     @title = "New Star Form"
-    erb :"stars/newstar"
+    @star = Star.new
+    erb :"stars/new"
   end
 
-  get "/stars/:id" do
+  get "/:id" do
     id = params[:id].to_i
-    @star = $stars[id]
+    @star = Star.find(id)
     erb :"stars/show"
   end
 
-  get "/stars/:id/edit" do
+  get "/:id/edit" do
     id = params[:id].to_i
-    @star = $stars[id]
+    @star = Star.find(id)
     @title = "Edit star"
     erb :"stars/edit"
   end
 
-  put "/stars/:id" do
+  put "/:id" do
     id = params[:id]
-    "Updates star #{id}"
+    star = Star.find(id)
+    star.title = params[:title]
+    star.info = params[:info]
+    star.image = params[:image]
+    star.save
+    redirect '/'
   end
 
-  delete "/stars/:id" do
+  delete "/:id" do
     id = params[:id]
-    "Deletes star #{id}"
+    Star.destroy(id)
+    redirect '/'
   end
 end

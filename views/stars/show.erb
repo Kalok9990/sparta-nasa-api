@@ -1,5 +1,5 @@
-<h1><%= @star[:title]%></h1>
-<p><%= @star[:body]%></p>
+<h1><%= @star.title%></h1>
+<p><%= @star.info%></p>
 
-<a href="/stars/<%= @star[:id]%>/edit">Edit</a>
-<img src="<%= @star[:source] %>">
+<a href="/<%= @star.id%>/edit">Edit</a>
+<img src="<%= @star.image %>">

@@ -1,0 +1,21 @@
+<form action="/<%= @star.id %>" method="POST">
+  <div>
+    <label>Title</label>
+    <input type="text" name="title" placeholder="Enter a title" value="<%= @star.title %>">
+  </div>
+  <div>
+    <label>Info</label>
+    <textarea name="info" rows="8" cols="40" placeholder="Information on the star"><%= @star.info %></textarea>
+  </div>
+  <div>
+    <label>Image</label>
+    <textarea name="image" placeholder="Image of the star"><%= @star.image %></textarea>
+  </div>
+  <div>
+    <input type="submit" value="Save Post">
+  </div>
+  <% if(@star.id) %>
+    <input type="hidden" name="_method" value="PUT">
+  <% end %>
+
+</form>
