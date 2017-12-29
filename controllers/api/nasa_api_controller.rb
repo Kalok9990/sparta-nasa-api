@@ -22,4 +22,13 @@ class NasaApiController < Sinatra::Base
 
     erb :'nasa/browse', :locals => {results: output}
   end
+
+  get '/api/lookup' do
+
+    erb :'nasa/lookup'
+  end
+
+  get '/api/feed' do
+    erb :'nasa/feed'
+  end
 end
