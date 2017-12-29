@@ -1,7 +1,38 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    addressable (2.5.2)
+      public_suffix (>= 2.0.2, < 4.0)
+    axiom-types (0.1.1)
+      descendants_tracker (~> 0.0.4)
+      ice_nine (~> 0.11.0)
+      thread_safe (~> 0.3, >= 0.3.1)
+    coercible (1.0.0)
+      descendants_tracker (~> 0.0.1)
+    descendants_tracker (0.0.4)
+      thread_safe (~> 0.3, >= 0.3.1)
+    domain_name (0.5.20170404)
+      unf (>= 0.0.5, < 1.0.0)
+    equalizer (0.0.11)
+    http (0.8.14)
+      addressable (~> 2.3)
+      http-cookie (~> 1.0)
+      http-form_data (~> 1.0.1)
+      http_parser.rb (~> 0.6.0)
+    http-cookie (1.0.3)
+      domain_name (~> 0.5)
+    http-form_data (1.0.3)
+    http_parser.rb (0.6.0)
+    httparty (0.15.6)
+      multi_xml (>= 0.5.2)
+    ice_nine (0.11.2)
+    multi_xml (0.6.0)
     mustermann (1.0.1)
+    neows (1.1.0)
+      http (~> 0.8.4)
+      virtus (~> 1.0.5)
+    pg (0.21.0)
+    public_suffix (3.0.1)
     rack (2.0.3)
     rack-protection (2.0.0)
       rack
@@ -10,12 +41,24 @@ GEM
       rack (~> 2.0)
       rack-protection (= 2.0.0)
       tilt (~> 2.0)
+    thread_safe (0.3.6)
     tilt (2.0.8)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.4)
+    virtus (1.0.5)
+      axiom-types (~> 0.1)
+      coercible (~> 1.0)
+      descendants_tracker (~> 0.0, >= 0.0.3)
+      equalizer (~> 0.0, >= 0.0.9)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  httparty
+  neows
+  pg
   rack
   sinatra
 
