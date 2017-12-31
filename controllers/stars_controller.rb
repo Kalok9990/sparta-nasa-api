@@ -15,7 +15,6 @@ class StarsController < Sinatra::Base
   end
 
   post "/" do
-    "Creates new stars"
     star = Star.new
     star.title = params[:title]
     star.info = params[:info]
