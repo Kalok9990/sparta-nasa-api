@@ -13,10 +13,11 @@
       <td><%= @neow[date].length %></td>
     </tr>
     <% @neow[date].each do |value| %>
+      <!-- <a href='/api/#{neo_ref_id}'>#{neo_ref_id}</a> -->
       <tr>
         <td></td>
         <td>Neo Reference ID:</td>
-        <td><a href=''><%= value['neo_reference_id'] %></a></td>
+        <td><a href="/api/<%= value['neo_reference_id'] %>"><%= value['neo_reference_id'] %></a></td>
       </tr>
     <% end %>
   <% end %>

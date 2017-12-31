@@ -27,7 +27,12 @@ class NasaApiController < Sinatra::Base
     api_result['near_earth_objects'].each do |w|
       neo_ref_id = w['neo_reference_id']
       name = w['name']
-      output << "<tr><td><a href='/api/<%= @neo_ref_id %><%= #{neo_ref_id} %>'>#{neo_ref_id}</td></a><td>#{name}</td></tr>"
+      output << "<tr>
+                <td>
+                <a href='/api/#{neo_ref_id}'>#{neo_ref_id}</a>
+                </td>
+                <td>#{name}</td>
+                </tr>"
     end
 
     # renders on browse page
@@ -86,5 +91,28 @@ class NasaApiController < Sinatra::Base
 
     # renders on dates page
     erb :'nasa/dates'
+  end
+
+  # A get request to the api browse service which will respond with the data that is fetched
+  get '/api/:id' do
+    id = params[:id]
+    id_url = "https://api.nasa.gov/neo/rest/v1/neo/#{id}?api_key=92KjKXlfAG8eYrh0KhkkRuWKAbIwdEUAsu2wlS5c"
+    response = HTTParty.get(id_url)
+    @feed = response.parsed_response
+    @neo_id = @feed['neo_reference_id']
+    @name = @feed['name']
+    @km_max = @feed['estimated_diameter']['kilometers']['estimated_diameter_max']
+    @km_min = @feed['estimated_diameter']['kilometers']['estimated_diameter_min']
+    @m_max = @feed['estimated_diameter']['meters']['estimated_diameter_max']
+    @m_min = @feed['estimated_diameter']['meters']['estimated_diameter_min']
+    @miles_max = @feed['estimated_diameter']['miles']['estimated_diameter_max']
+    @miles_min = @feed['estimated_diameter']['miles']['estimated_diameter_min']
+    @feet_max = @feed['estimated_diameter']['feet']['estimated_diameter_max']
+    @feet_min = @feed['estimated_diameter']['feet']['estimated_diameter_min']
+    @hazardous = @feed['is_potentially_hazardous_asteroid']
+    @link = @feed['links']['self']
+
+    # renders on show page
+    erb :'nasa/show'
   end
 end
