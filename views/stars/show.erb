@@ -3,3 +3,7 @@
 
 <a href="/<%= @star.id%>/edit">Edit</a>
 <img src="<%= @star.image %>">
+<form action="/<%= @star.id %>" method="POST">
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" name="name" value="Delete">
+</form>
