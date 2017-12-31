@@ -1,6 +1,2 @@
 <h1>Asteroid between dates</h1>
-<form method="get" action="/runMethod">
-    <input name="start_date" placeholder="Start Date">
-    <input name="end_date" placeholder="End Date">
-    <input class='btn btn-primary' type='submit'>
-</form>
+<%= erb(:'partials/dates_form', :layout => false) %>

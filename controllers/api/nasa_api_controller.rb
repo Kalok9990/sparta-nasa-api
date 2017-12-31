@@ -18,7 +18,7 @@ class NasaApiController < Sinatra::Base
     api_result['near_earth_objects'].each do |w|
       neo_ref_id = w['neo_reference_id']
       name = w['name']
-      output << "<tr><td><a href='/api/<%= #{neo_ref_id} %>'>#{neo_ref_id}</td></a><td>#{name}</td></tr>"
+      output << "<tr><td><a href='/api/<%= @neo_ref_id %><%= #{neo_ref_id} %>'>#{neo_ref_id}</td></a><td>#{name}</td></tr>"
     end
 
     erb :'nasa/browse', :locals => {results: output}
@@ -36,11 +36,26 @@ class NasaApiController < Sinatra::Base
     erb :'nasa/show'
   end
 
-  get '/api/dates' do
-    erb :'nasa/dates'
-  end
-
   get '/api/feed' do
     erb :'nasa/feed'
+  end
+
+  post '/api/dates/' do
+    startdate = params[:start_date]
+    enddate = params[:end_date]
+    if startdate == "" && enddate == ""
+      id_url = "https://api.nasa.gov/neo/rest/v1/feed/today?detailed=true&api_key=92KjKXlfAG8eYrh0KhkkRuWKAbIwdEUAsu2wlS5c"
+    else
+      id_url = "https://api.nasa.gov/neo/rest/v1/feed?start_date=#{startdate}&end_date=#{enddate}&api_key=92KjKXlfAG8eYrh0KhkkRuWKAbIwdEUAsu2wlS5c"
+    end
+    response = HTTParty.get(id_url)
+    @feed = response.parsed_response
+    @element_count = @feed['element_count']
+    @next = @feed['links']['next']
+    @prev = @feed['links']['prev']
+    @neow = @feed['near_earth_objects']
+    @date = @feed['near_earth_objects'].keys
+
+    erb :'nasa/dates'
   end
 end

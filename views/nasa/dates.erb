@@ -1,0 +1,23 @@
+<table>
+  <tr>
+    <td>Element count:</td>
+    <td><%= @element_count %></td>
+  </tr>
+  <% @date.each do |date| %>
+    <tr>
+      <td>Date:</td>
+      <td><%= date %></td>
+    </tr>
+    <tr>
+      <td>Elements:</td>
+      <td><%= @neow[date].length %></td>
+    </tr>
+    <% @neow[date].each do |value| %>
+      <tr>
+        <td></td>
+        <td>Neo Reference ID:</td>
+        <td><%= value['neo_reference_id'] %></td>
+      </tr>
+    <% end %>
+  <% end %>
+</table>
