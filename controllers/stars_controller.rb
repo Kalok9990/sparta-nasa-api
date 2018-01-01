@@ -1,3 +1,6 @@
+require 'sinatra'
+require "sinatra/reloader" if development?
+
 class StarsController < Sinatra::Base
 
   # sets root as the parent directory of the current file

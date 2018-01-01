@@ -1,7 +1,9 @@
 <h1>Welcome to my star site</h1>
-<%@stars.each do |star|%>
-  <div>
-    <h3><a href="<%=star.id%>"><%=star.title%></a></h3>
-    <img src="<%=star.image%>">
-  </div>
-<%end%>
+<div class="inner">
+  <%@stars.each do |star|%>
+    <div class="ind">
+      <h3><a href="<%=star.id%>"><%=star.title%></a></h3>
+      <img src="<%=star.image%>">
+    </div>
+  <%end%>
+</div>
