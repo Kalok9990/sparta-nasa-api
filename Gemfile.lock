@@ -34,10 +34,13 @@ GEM
       http (~> 0.8.4)
       virtus (~> 1.0.5)
     pg (0.21.0)
+    power_assert (1.1.1)
     public_suffix (3.0.1)
     rack (2.0.3)
     rack-protection (2.0.0)
       rack
+    rack-test (0.8.2)
+      rack (>= 1.0, < 3)
     rspec (3.7.0)
       rspec-core (~> 3.7.0)
       rspec-expectations (~> 3.7.0)
@@ -56,6 +59,8 @@ GEM
       rack (~> 2.0)
       rack-protection (= 2.0.0)
       tilt (~> 2.0)
+    test-unit (3.2.7)
+      power_assert
     thread_safe (0.3.6)
     tilt (2.0.8)
     unf (0.1.4)
@@ -76,8 +81,10 @@ DEPENDENCIES
   neows
   pg
   rack
+  rack-test
   rspec
   sinatra
+  test-unit
 
 BUNDLED WITH
    1.16.0

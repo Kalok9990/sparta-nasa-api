@@ -28,9 +28,7 @@ class NasaApiController < Sinatra::Base
       neo_ref_id = w['neo_reference_id']
       name = w['name']
       output << "<tr>
-                <td>
-                <a href='/api/#{neo_ref_id}'>#{neo_ref_id}</a>
-                </td>
+                <td><a href='/api/#{neo_ref_id}'>#{neo_ref_id}</a></td>
                 <td>#{name}</td>
                 </tr>"
     end
