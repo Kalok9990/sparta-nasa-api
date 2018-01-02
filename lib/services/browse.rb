@@ -134,7 +134,7 @@ class NasaBrowse
     asteroid["is_potentially_hazardous_asteroid"]
   end
 
-  def neos_close_aproach(asteroid)
+  def neos_close_approach(asteroid)
     asteroid["close_approach_data"]
   end
 

@@ -174,7 +174,7 @@ describe Nasaios do
 
     it "should respond within the array with close approach data as an array" do
       @nasa_browse.get_neos.each do |asteroid|
-        expect(@nasa_browse.neos_close_aproach(asteroid)).to be_kind_of(Array)
+        expect(@nasa_browse.neos_close_approach(asteroid)).to be_kind_of(Array)
       end
     end
 

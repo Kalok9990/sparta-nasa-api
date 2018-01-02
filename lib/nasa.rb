@@ -7,4 +7,12 @@ class Nasaios
   def browse
     NasaBrowse.new
   end
+
+  def feed
+    NasaFeed.new
+  end
+
+  def lookup
+    NasaLookup.new
+  end
 end
