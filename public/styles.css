@@ -51,6 +51,10 @@ body{
   width: 200px;
 }
 
+.hamburger{
+  background-color: white;
+}
+
 .table{
   text-align: center;
   width: auto;

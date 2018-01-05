@@ -1,5 +1,3 @@
-require 'neows'
-
 class NasaApiController < Sinatra::Base
 
   # Sets root as the parent-directory of the current file
@@ -7,9 +5,6 @@ class NasaApiController < Sinatra::Base
 
   # Sets the view directory correctly
   set :views, Proc.new{File.join(root, "views")}
-
-  # Sets a new client for the gem neows
-  client = Neows::REST::Client.new
 
   # Enables the reloader so we dont need to keep restarting the server
   configure :development do
@@ -19,8 +14,9 @@ class NasaApiController < Sinatra::Base
   # A get request to the api browse service which will respond with the data that is fetched
   get '/api/browse' do
 
-    # A gem method that uses the browse service
-    api_result = client.browse
+    url = "https://api.nasa.gov/neo/rest/v1/neo/browse?api_key=92KjKXlfAG8eYrh0KhkkRuWKAbIwdEUAsu2wlS5c"
+    response = HTTParty.get(url)
+    api_result = response.parsed_response
     output = ''
 
     # Loops through the hash and fetches the relevant information and adds a column to output
@@ -32,6 +28,9 @@ class NasaApiController < Sinatra::Base
                 <td>#{name}</td>
                 </tr>"
     end
+
+    @next = api_result['links']['next']
+    @prev = api_result['links']['prev']
 
     # renders on browse page
     erb :'nasa/browse', :locals => {results: output}

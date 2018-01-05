@@ -13,7 +13,9 @@
   <body>
     <%= erb(:"partials/navigation", :layout => false) %>
     <div id="main">
-      <span id="navigation" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+      <div class="hamburger">
+        <span id="navigation" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+      </div>
       <%= yield %>
     </div>
   </body>

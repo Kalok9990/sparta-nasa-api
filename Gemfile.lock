@@ -1,41 +1,14 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    addressable (2.5.2)
-      public_suffix (>= 2.0.2, < 4.0)
-    axiom-types (0.1.1)
-      descendants_tracker (~> 0.0.4)
-      ice_nine (~> 0.11.0)
-      thread_safe (~> 0.3, >= 0.3.1)
-    coercible (1.0.0)
-      descendants_tracker (~> 0.0.1)
-    descendants_tracker (0.0.4)
-      thread_safe (~> 0.3, >= 0.3.1)
     diff-lcs (1.3)
-    domain_name (0.5.20170404)
-      unf (>= 0.0.5, < 1.0.0)
-    equalizer (0.0.11)
-    http (0.8.14)
-      addressable (~> 2.3)
-      http-cookie (~> 1.0)
-      http-form_data (~> 1.0.1)
-      http_parser.rb (~> 0.6.0)
-    http-cookie (1.0.3)
-      domain_name (~> 0.5)
-    http-form_data (1.0.3)
-    http_parser.rb (0.6.0)
     httparty (0.15.6)
       multi_xml (>= 0.5.2)
-    ice_nine (0.11.2)
     json (2.1.0)
     multi_xml (0.6.0)
     mustermann (1.0.1)
-    neows (1.1.0)
-      http (~> 0.8.4)
-      virtus (~> 1.0.5)
     pg (0.21.0)
     power_assert (1.1.1)
-    public_suffix (3.0.1)
     rack (2.0.3)
     rack-protection (2.0.0)
       rack
@@ -61,16 +34,7 @@ GEM
       tilt (~> 2.0)
     test-unit (3.2.7)
       power_assert
-    thread_safe (0.3.6)
     tilt (2.0.8)
-    unf (0.1.4)
-      unf_ext
-    unf_ext (0.0.7.4)
-    virtus (1.0.5)
-      axiom-types (~> 0.1)
-      coercible (~> 1.0)
-      descendants_tracker (~> 0.0, >= 0.0.3)
-      equalizer (~> 0.0, >= 0.0.9)
 
 PLATFORMS
   ruby
@@ -78,13 +42,15 @@ PLATFORMS
 DEPENDENCIES
   httparty
   json
-  neows
   pg
   rack
   rack-test
   rspec
   sinatra
   test-unit
+
+RUBY VERSION
+   ruby 2.4.1p111
 
 BUNDLED WITH
    1.16.0
