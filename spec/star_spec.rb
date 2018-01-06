@@ -70,11 +70,7 @@ describe 'StarsController' do
     end
 
     it "redirects to '/'" do
-      post "/", params = {
-        'title' => 'Scorpio',
-        'info' => 'It is a constellation that represents a scorpion',
-        'image' => 'https://i0.wp.com/utahsadventurefamily.com/wp-content/uploads/2013/08/scorpius_08-18-11_2200.png'
-      }
+      post "/"
       follow_redirect!
       expect(last_request.path).to eq('/')
     end

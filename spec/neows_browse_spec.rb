@@ -180,7 +180,7 @@ describe Nasaios do
 
     it "should respond with a close approach date in the array as a string" do
       @nasa_browse.get_neos.each do |asteroid|
-        @nasa_browse.neos_close_aproach(asteroid).each do |data|
+        @nasa_browse.neos_close_approach(asteroid).each do |data|
           expect(@nasa_browse.get_date(data)).to be_kind_of(String)
         end
       end
@@ -188,7 +188,7 @@ describe Nasaios do
 
     it "should respond with an epoch close approach date in the array as an Integer" do
       @nasa_browse.get_neos.each do |asteroid|
-        @nasa_browse.neos_close_aproach(asteroid).each do |data|
+        @nasa_browse.neos_close_approach(asteroid).each do |data|
           expect(@nasa_browse.get_epoch(data)).to be_kind_of(Integer)
         end
       end
@@ -196,7 +196,7 @@ describe Nasaios do
 
     it "should respond with a relative velocity in the array as a Hash" do
       @nasa_browse.get_neos.each do |asteroid|
-        @nasa_browse.neos_close_aproach(asteroid).each do |data|
+        @nasa_browse.neos_close_approach(asteroid).each do |data|
           expect(@nasa_browse.get_velocity(data)).to be_kind_of(Hash)
         end
       end
@@ -204,7 +204,7 @@ describe Nasaios do
 
     it "should respond with kms in relative velocity in the array as a float" do
       @nasa_browse.get_neos.each do |asteroid|
-        @nasa_browse.neos_close_aproach(asteroid).each do |data|
+        @nasa_browse.neos_close_approach(asteroid).each do |data|
           expect(@nasa_browse.get_kms(data)).to be_kind_of(String)
         end
       end
@@ -212,7 +212,7 @@ describe Nasaios do
 
     it "should respond with kmh in relative velocity in the array as a float" do
       @nasa_browse.get_neos.each do |asteroid|
-        @nasa_browse.neos_close_aproach(asteroid).each do |data|
+        @nasa_browse.neos_close_approach(asteroid).each do |data|
           expect(@nasa_browse.get_kmh(data)).to be_kind_of(String)
         end
       end
@@ -220,7 +220,7 @@ describe Nasaios do
 
     it "should respond with miles per hour in relative velocity in the array as a float" do
       @nasa_browse.get_neos.each do |asteroid|
-        @nasa_browse.neos_close_aproach(asteroid).each do |data|
+        @nasa_browse.neos_close_approach(asteroid).each do |data|
           expect(@nasa_browse.get_mh(data)).to be_kind_of(String)
         end
       end
@@ -228,7 +228,7 @@ describe Nasaios do
 
     it "should respond with a miss distance in the array as a Hash" do
       @nasa_browse.get_neos.each do |asteroid|
-        @nasa_browse.neos_close_aproach(asteroid).each do |data|
+        @nasa_browse.neos_close_approach(asteroid).each do |data|
           expect(@nasa_browse.get_miss_distance(data)).to be_kind_of(Hash)
         end
       end
@@ -236,7 +236,7 @@ describe Nasaios do
 
     it "should respond with an astronomical miss distance in the array as a Hash" do
       @nasa_browse.get_neos.each do |asteroid|
-        @nasa_browse.neos_close_aproach(asteroid).each do |data|
+        @nasa_browse.neos_close_approach(asteroid).each do |data|
           expect(@nasa_browse.get_astonomical(data)).to be_kind_of(String)
         end
       end
@@ -244,7 +244,7 @@ describe Nasaios do
 
     it "should respond with a lunar miss distance in the array as a Hash" do
       @nasa_browse.get_neos.each do |asteroid|
-        @nasa_browse.neos_close_aproach(asteroid).each do |data|
+        @nasa_browse.neos_close_approach(asteroid).each do |data|
           expect(@nasa_browse.get_lunar(data)).to be_kind_of(String)
         end
       end
@@ -252,7 +252,7 @@ describe Nasaios do
 
     it "should respond with a kilometers miss distance in the array as a Hash" do
       @nasa_browse.get_neos.each do |asteroid|
-        @nasa_browse.neos_close_aproach(asteroid).each do |data|
+        @nasa_browse.neos_close_approach(asteroid).each do |data|
           expect(@nasa_browse.get_km_miss(data)).to be_kind_of(String)
         end
       end
@@ -260,7 +260,7 @@ describe Nasaios do
 
     it "should respond with a miles miss distance in the array as a Hash" do
       @nasa_browse.get_neos.each do |asteroid|
-        @nasa_browse.neos_close_aproach(asteroid).each do |data|
+        @nasa_browse.neos_close_approach(asteroid).each do |data|
           expect(@nasa_browse.get_miles_miss(data)).to be_kind_of(String)
         end
       end
@@ -268,7 +268,7 @@ describe Nasaios do
 
     it "should respond with a orbiting body in the array as a Hash" do
       @nasa_browse.get_neos.each do |asteroid|
-        @nasa_browse.neos_close_aproach(asteroid).each do |data|
+        @nasa_browse.neos_close_approach(asteroid).each do |data|
           expect(@nasa_browse.get_orbit_body(data)).to be_kind_of(String)
         end
       end

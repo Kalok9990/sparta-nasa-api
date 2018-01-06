@@ -1,9 +1,9 @@
 <h1><%= @star.title%></h1>
 <p><%= @star.info%></p>
 
-<a href="/<%= @star.id%>/edit">Edit</a>
+<a href="/<%= @star.id%>/edit" id="edit_button">Edit</a>
 <img src="<%= @star.image %>">
 <form action="/<%= @star.id %>" method="POST">
   <input type="hidden" name="_method" value="DELETE">
-  <input type="submit" name="name" value="Delete">
+  <input type="submit" id="delete_button" name="name" value="Delete">
 </form>

@@ -76,7 +76,7 @@ class NasaApiController < Sinatra::Base
     if @startdate == "" && @enddate == ""
       id_url = "https://api.nasa.gov/neo/rest/v1/feed/today?detailed=true&api_key=92KjKXlfAG8eYrh0KhkkRuWKAbIwdEUAsu2wlS5c"
     else
-      id_url = "https://api.nasa.gov/neo/rest/v1/feed?start_date=#{startdate}&end_date=#{enddate}&api_key=92KjKXlfAG8eYrh0KhkkRuWKAbIwdEUAsu2wlS5c"
+      id_url = "https://api.nasa.gov/neo/rest/v1/feed?start_date=#{@startdate}&end_date=#{@enddate}&api_key=92KjKXlfAG8eYrh0KhkkRuWKAbIwdEUAsu2wlS5c"
     end
     response = HTTParty.get(id_url)
     @feed = response.parsed_response

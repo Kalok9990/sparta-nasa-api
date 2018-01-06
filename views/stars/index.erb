@@ -2,7 +2,7 @@
 <div class="inner">
   <%@stars.each do |star|%>
     <div class="ind">
-      <h3><a href="<%=star.id%>"><%=star.title%></a></h3>
+      <h3><a href="<%=star.id%>" id="<%=star.id%>"><%=star.title%></a></h3>
       <img src="<%=star.image%>">
     </div>
   <%end%>

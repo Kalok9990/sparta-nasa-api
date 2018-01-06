@@ -11,11 +11,9 @@
     <link rel="stylesheet" href="/styles.css">
   </head>
   <body>
+    <button id="openNav" class="w3-button w3-teal w3-xlarge" onclick="openNav()">&#9776;</button>
     <%= erb(:"partials/navigation", :layout => false) %>
     <div id="main">
-      <div class="hamburger">
-        <span id="navigation" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
-      </div>
       <%= yield %>
     </div>
   </body>
