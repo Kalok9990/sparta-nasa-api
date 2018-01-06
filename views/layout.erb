@@ -11,10 +11,13 @@
     <link rel="stylesheet" href="/styles.css">
   </head>
   <body>
-    <button id="openNav" class="w3-button w3-teal w3-xlarge" onclick="openNav()">&#9776;</button>
-    <%= erb(:"partials/navigation", :layout => false) %>
+    <header class="fixed-top">
+      <button id="openNav" class="navbar-toggler" onclick="openNav()">&#9776;</button>
+      <%= erb(:"partials/navigation", :layout => false) %>
+    </header>
     <div id="main">
       <%= yield %>
+      <img id="falling_star" src="http://vignette3.wikia.nocookie.net/animal-jam-clans-1/images/4/4a/Shootingstar-full.png/revision/latest?cb=20160808205022" alt="Falling star">
     </div>
   </body>
 </html>

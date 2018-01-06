@@ -1,18 +1,18 @@
-<form action="/<%= @star.id %>" method="POST">
+<form id="stars" action="/<%= @star.id %>" method="POST">
   <div>
     <label>Title</label>
     <input type="text" id="title_form" name="title" placeholder="Enter a title" value="<%= @star.title %>">
   </div>
   <div>
     <label>Info</label>
-    <textarea id="info_form" name="info" rows="8" cols="40" placeholder="Information on the star"><%= @star.info %></textarea>
+    <textarea id="info_form" name="info" rows="8" cols="25" placeholder="Information on the constellation"><%= @star.info %></textarea>
   </div>
   <div>
     <label>Image</label>
-    <textarea name="image" id="image_form" placeholder="Image of the star"><%= @star.image %></textarea>
+    <textarea name="image" id="image_form" placeholder="Image of the constellation"><%= @star.image %></textarea>
   </div>
   <div>
-    <input type="submit" id="submit_star" value="Save Star">
+    <input class="btn btn-primary btn-outline-success my-2 my-sm-0" type="submit" id="submit_star" value="Save Star">
   </div>
   <% if(@star.id) %>
     <input type="hidden" name="_method" value="PUT">

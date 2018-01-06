@@ -1,9 +1,13 @@
-<h1>Welcome to my star site</h1>
+<h1 class="text">Welcome to a starry night</h1>
 <div class="inner">
   <%@stars.each do |star|%>
     <div class="ind">
-      <h3><a href="<%=star.id%>" id="<%=star.id%>"><%=star.title%></a></h3>
-      <img src="<%=star.image%>">
+      <a href="<%=star.id%>" id="<%=star.id%>">
+        <h3><%=star.title%></h3>
+        <div class="star_image">
+          <img src="<%=star.image%>">
+        </div>
+      </a>
     </div>
   <%end%>
 </div>
