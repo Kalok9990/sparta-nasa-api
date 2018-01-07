@@ -63,7 +63,7 @@ describe 'StarsController' do
       post "/", params = {
         'title' => 'Scorpio',
         'info' => 'It is a constellation that represents a scorpion',
-        'image' => 'https://i0.wp.com/utahsadventurefamily.com/wp-content/uploads/2013/08/scorpius_08-18-11_2200.png'
+        'image' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/CancerCC_cropped.jpg/256px-CancerCC_cropped.jpg'
       }
       follow_redirect!
       expect(last_response.body).to include("Scorpio")
