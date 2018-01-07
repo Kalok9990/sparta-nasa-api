@@ -1,3 +1,7 @@
+DROP DATABASE constellations;
+
+CREATE DATABASE constellations;
+
 DROP TABLE IF EXISTS star;
 
 CREATE TABLE star (

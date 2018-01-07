@@ -38,6 +38,11 @@ class StarsController < Sinatra::Base
     erb :"stars/new"
   end
 
+  # goes to the about page
+  get "/about" do
+    erb :"stars/about"
+  end
+
   # A get request to /:id will respond with a the show template with the requested post
   get "/:id" do
     id = params[:id].to_i
