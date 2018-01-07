@@ -18,7 +18,7 @@ describe 'StarsController' do
 
     it "includes 'Welcome to my star site' on the page" do
       get "/"
-      expect(last_response.body).to include("Welcome to my star site")
+      expect(last_response.body).to include("Welcome to a starry night")
     end
   end
 
@@ -36,25 +36,25 @@ describe 'StarsController' do
 
   context "should load the show page with relevant information on the relevant star" do
     it "loads the show page" do
-      get "/1"
+      get "/2"
       expect(last_response.status).to eq 200
     end
 
-    it "includes 'Libra'" do
-      get "/1"
-      expect(last_response.body).to include("Libra")
+    it "includes 'Taurus'" do
+      get "/2"
+      expect(last_response.body).to include("Taurus")
     end
   end
 
   context "should load the form with relevant information of the star already in the input boxes" do
     it "loads the edit page" do
-      get "/1/edit"
+      get "/27/edit"
       expect(last_response.status).to eq 200
     end
 
     it "should include Libra" do
-      get "/1/edit"
-      expect(last_response.body).to include("Libra")
+      get "/27/edit"
+      expect(last_response.body).to include("Cancer")
     end
   end
 

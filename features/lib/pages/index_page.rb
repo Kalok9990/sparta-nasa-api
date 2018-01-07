@@ -4,7 +4,7 @@ class IndexPage
   include Capybara::DSL
 
   HOMEPAGE = 'localhost:9292' unless const_defined?(:HOMEPAGE)
-  EDIT_STAR_LINK_ID = '1' unless const_defined?(:STAR_LINK_ID)
+  EDIT_STAR_LINK_ID = '1' unless const_defined?(:EDIT_STAR_LINK_ID)
   # will need to change delete id
   DELETE_STAR_LINK_ID = '18' unless const_defined?(:DELETE_STAR_LINK_ID)
 

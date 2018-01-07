@@ -15,7 +15,7 @@ describe NasaApiController do
   it "loads the lookup page" do
     get "/api/lookup"
     expect(last_response).to be_ok
-    expect(last_response.body).to include("Look up an asteroid")
+    expect(last_response.body).to include("Search for an asteroid")
   end
 
   it "loads the feed page" do
