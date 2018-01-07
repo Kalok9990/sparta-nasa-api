@@ -6,6 +6,13 @@ This repository contains a REST API using Sinatra that consumes the NASA NeoWs A
 Ensure that Ruby is installed. For more information go to https://www.ruby-lang.org/en/documentation/installation/
 which will provide more information on how to install Ruby.
 
+There are some environments that also need to be installed to ensure that the web application runs smoothly. You will need to install:
+* PostgreSQL
+  * https://www.postgresql.org/download/
+* Homebrew
+  * https://brew.sh
+Once these are installed, make sure that PostgreSQL is running properly.
+
 This repository uses a variety of Gems that help run tests on this application. To install the gems, in the terminal run
 ```
 bundle install
