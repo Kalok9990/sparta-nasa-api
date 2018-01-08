@@ -20,7 +20,10 @@ bundle install
 and this will install all the gems required.
 
 ## Running the Web Application
-Make sure to clone this repository. In the terminal run the command:
+Make sure to have a copy of the repository. This can be downloaded with this link:
+https://github.com/Kalok9990/sparta-nasa-api/archive/dev.zip
+
+ In the terminal run the command:
 ```
 psql -f seed.sql
 ```

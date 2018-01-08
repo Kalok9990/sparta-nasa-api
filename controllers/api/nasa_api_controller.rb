@@ -6,11 +6,6 @@ class NasaApiController < Sinatra::Base
   # Sets the view directory correctly
   set :views, Proc.new{File.join(root, "views")}
 
-  # Enables the reloader so we dont need to keep restarting the server
-  configure :development do
-    register Sinatra::Reloader
-  end
-
   # A get request to the api browse service which will respond with the data that is fetched
   get '/api/browse' do
 

@@ -1,5 +1,4 @@
 require 'sinatra'
-require "sinatra/reloader" if development?
 
 class StarsController < Sinatra::Base
 
@@ -8,11 +7,6 @@ class StarsController < Sinatra::Base
 
   # Sets the view directory correctly
   set :views, Proc.new{File.join(root, "views")}
-
-  # Enables the reloader so we dont need to keep restarting the server
-  configure :development do
-    register Sinatra::Reloader
-  end
 
   # A get request to the / route will respond with our index template with all the stars from the model
   get "/" do
