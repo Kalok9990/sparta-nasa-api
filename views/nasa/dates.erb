@@ -1,0 +1,25 @@
+<h4 class="text">Here are all the asteroids for the date</h4>
+<h5 class="text">For more information on the asteroid, click on the neo reference id</h5>
+<table class="table-margin table table-sm">
+  <tr>
+    <td id="element_count">Element count:</td>
+    <td><%= @element_count %></td>
+  </tr>
+  <% @date.each do |date| %>
+    <tr>
+      <td>Date:</td>
+      <td><%= date %></td>
+    </tr>
+    <tr>
+      <td>Elements:</td>
+      <td><%= @neow[date].length %></td>
+    </tr>
+    <% @neow[date].each do |value| %>
+      <tr>
+        <td></td>
+        <td>Neo Reference ID:</td>
+        <td><a href="/api/<%= value['neo_reference_id'] %>"><%= value['neo_reference_id'] %></a></td>
+      </tr>
+    <% end %>
+  <% end %>
+</table>

@@ -1,0 +1,13 @@
+<div id="stars">
+  <h1 class="text"><%= @star.title%></h1>
+  <p><%= @star.info%></p>
+
+  <img src="<%= @star.image %>">
+  <div class="star_buttons">
+    <form action="/<%= @star.id %>" method="POST">
+      <a href="/<%= @star.id%>/edit" id="edit_button" class='btn btn-primary'>Edit</a>
+      <input type="hidden" name="_method" value="DELETE">
+      <input type="submit" class='btn btn-primary' id="delete_button" name="name" value="Delete">
+    </form>
+  </div>
+</div>
